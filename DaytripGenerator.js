@@ -50,13 +50,23 @@ function randomRestaurant() {
 
 console.log(dayTrip);
 
+function clearDayTrip() {
+ dayTrip = [""];
+ foundDestination = [];
+ foundRestaurant = [];
+ foundTransportation = [];
+ foundEntertainment = [];
+
+}
+
 function roll() {
-  dayTrip.length = 0;
+  clearDayTrip();
   randomDestination();
   randomEntertainment();
   randomTransportation();
   randomRestaurant();
   finalMessage();
+  
 }
 
 function finalMessage() {
@@ -65,12 +75,13 @@ function finalMessage() {
       foundDestination +
       " Via " +
       foundTransportation +
-      " eat " +
+      " to eat " +
       foundRestaurant +
       " food. Then try your hand at " +
       foundEntertainment
   );
 }
+
 function planTrip(){
 
 randomDestination();
